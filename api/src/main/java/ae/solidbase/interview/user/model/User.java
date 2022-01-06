@@ -50,4 +50,6 @@ public class User {
 
     @Column(nullable = false)
     private String passportNumber;
+
+
 }

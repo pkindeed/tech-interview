@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NavigationBar from './NavigationBar';
+import TableClass from './TableClass'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Empty from './Empty';
+import userApi from './api/userApi';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <NavigationBar />
+      <Switch>
+        <Route exact path='/' component={TableClass} />
+        <Route exact path='/create' component={TableClass} />
+        <Route exact path='/viewdata' component={userApi} />
+        <Route exact path='/updatedata' component={Empty} />
+      </Switch>
+    </Router>
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );

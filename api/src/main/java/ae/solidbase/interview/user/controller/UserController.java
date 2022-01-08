@@ -50,5 +50,14 @@ public class UserController {
             return null;
         }
     }
+
+    @DeleteMapping(value = "/users")
+    public void deleteUser(@RequestBody User user) {
+        if (user != null) {
+            userService.deleteUser(user);
+        } else {
+
+        }
+    }
     
 }

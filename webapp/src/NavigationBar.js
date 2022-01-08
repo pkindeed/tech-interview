@@ -25,11 +25,6 @@ class NavigationBar extends React.Component {
                                 <Link to="/viewdata" className="link">View Users</Link>
                             </Typography>
                         </div>
-                        <div className="AppBareSpaces">
-                            <Typography variant="h6" color="inherit">
-                                <Link to="/updatedata" className="link">Update a User</Link>
-                            </Typography>
-                        </div>
                     </Toolbar>
                 </AppBar>
             </div>

@@ -18,4 +18,8 @@ public class UserService {
     public User saveUser(User user) {
         return userRepository.save(user);
     }
+
+    public void deleteUser(User user) {
+         userRepository.delete(user);
+    }
 }

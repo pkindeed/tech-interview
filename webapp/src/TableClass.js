@@ -66,8 +66,7 @@ class TableClass extends React.Component {
                                 required
                                 label="Name"
                                 name="name"
-                                defaultValue=""
-                                variant="outlined"
+                        
                                 onChange={this.handleInputChange}
                             />
                             <br />

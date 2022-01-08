@@ -4,9 +4,11 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import '../App.css';
 import axios from 'axios';
+import BasicModal from "../PopUp";
 
 class userApi extends React.Component {
   constructor(props) {
@@ -14,7 +16,16 @@ class userApi extends React.Component {
     this.state = {
       data: null,
       dataIsSending: false,
-      dataReceived: false
+      dataReceived: false,
+      id: 'yes',
+      name: 'yes',
+      surname: 'yes',
+      birtDate: 'yes',
+      email: 'yes',
+      phone: 'yes',
+      identity: 'yes',
+      passport: 'yes',
+      password:''
     };
    
   }
@@ -29,28 +40,6 @@ class userApi extends React.Component {
       console.log(error);
     }
   }
-
-  /*
-
-  async handleSubmit(event) {
-    event.preventDefault();
-    this.setState({ dataIsSending: true });
-    try {
-      await axios.delete('https://backextestex.herokuapp.com/rest/users/delete')
-    } catch (error) {
-      console.log(error);
-    };
-    try {
-      await fetch('https://backextestex.herokuapp.com/rest/users/all')
-        .then(response => response.json())
-        .then(data => this.setState({ data }))
-        .then(this.setState({ dataIsSending: false }))
-    } catch (error) {
-      console.log(error);
-    };
-  };
-
-  */
 
 
   render() {
@@ -78,6 +67,7 @@ class userApi extends React.Component {
               <TableBody>
                 {data.map(row => (
                   <TableRow key={row.name}>
+                   
                     <TableCell align="right">{row.id}</TableCell>
                     <TableCell align="right">{row.name}</TableCell>
                     <TableCell align="right">{row.surname}</TableCell>
@@ -86,7 +76,20 @@ class userApi extends React.Component {
                     <TableCell align="right">{row.phone}</TableCell>
                     <TableCell align="right">{row.identity}</TableCell>
                     <TableCell align="right">{row.passportNumber}</TableCell>
-
+                    <BasicModal 
+                    id={row.id}
+                    name={row.name}
+                    surname={row.surname}
+                    birthDate={row.birthDate}
+                    email={row.email}
+                    phone={row.phone}
+                    identity={row.identity}
+                    passport={row.passportNumber}
+                    password={row.password}
+          
+                    
+                    
+                    ></BasicModal>
 
 
                   </TableRow>

@@ -20,7 +20,6 @@ ReactDOM.render(
         <Route exact path='/' component={TableClass} />
         <Route exact path='/create' component={TableClass} />
         <Route exact path='/viewdata' component={userApi} />
-        <Route exact path='/updatedata' component={Empty} />
       </Switch>
     </Router>
 
